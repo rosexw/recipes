@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "recipeName": "Boiled Water",
+    "ingredients": [
+      "1 liter of water"
+    ],
+    "instructions": "Boil the water. Done!"
+  },
+  {
+    "id": 2,
+    "recipeName": "Cup noodles",
+    "ingredients": [
+      "Boiled Water",
+      "Cup Noodles"
+    ],
+    "instructions": "Boil the water (see the other recipe).\nAdd the water to the Cup Noodles.\nWait 3 minutes.\nEnjoy!"
+  }
+]
