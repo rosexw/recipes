@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Button, TouchableHighlight, AsyncStorage } from 'react-native'
 
-import recipes from '../data/recipes.json'
+// import recipes from '../data/recipes.json'
 
 const ListItem = ({ recipe, handleClick }) =>
   <TouchableHighlight onPress={() => handleClick(recipe)}>
@@ -13,15 +13,15 @@ export default class RecipeList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      recipes
+      recipes: []
     }
   }
 
-  // componentDidMount() {
-  //   AsyncStorage.getItem('recipebook')
-  //     .then(recipes => this.setState({ recipes: JSON.parse(recipes) || [] }))
-  //     .catch(error => console.error(error))
-  // }
+  componentDidMount() {
+    AsyncStorage.getItem('recipebook')
+      .then(recipes => this.setState({ recipes: JSON.parse(recipes) || [] }))
+      .catch(error => console.error(error))
+  }
 
   static navigationOptions = {
     title: 'Recipe List'
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: '100%',
     flexDirection: 'column',
-    paddingTop: 100,
+    // paddingTop: 100,
     // justifyContent: 'space-between'
   },
   centered: {
