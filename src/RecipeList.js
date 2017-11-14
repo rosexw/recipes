@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Button, TouchableHighlight, AsyncStorage } from
 
 import recipes from '../data/recipes.json'
 
+
+//When user clicks,
 const ListItem = ({ recipe, handleClick }) =>
   <TouchableHighlight onPress={() => handleClick(recipe)}>
     <Text>{recipe.recipeName}</Text>
@@ -27,7 +29,7 @@ export default class RecipeList extends Component {
     title: 'Recipe List'
   }
 
-  _clickItem = (recipe) => {
+  _handlePress = (recipe) => {
     this.props.navigation.navigate('RecipeDetails', { recipe })
   }
 
@@ -51,7 +53,7 @@ export default class RecipeList extends Component {
             <ListItem
               key={recipe.id}
               recipe={recipe}
-              handleClick={this._clickItem}
+              handleClick={this._handlePress}
             />
           ) :
 
