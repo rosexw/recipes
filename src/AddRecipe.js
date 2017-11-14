@@ -21,10 +21,9 @@ export default class AddRecipe extends Component {
   }
 
   _changeIngredient = (index, newIngredient) => {
-    const ingredients = this.state.ingredients.map((ingredient, ingIndex) =>
-      ingIndex === index ?
-        newIngredient :
-        ingredient
+    const ingredients = this.state.ingredients.map((ingredient, key) =>
+      key === index ?
+        newIngredient : ingredient
     )
     this.setState({ ingredients })
   }
