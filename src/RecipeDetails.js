@@ -12,11 +12,13 @@ export default class RecipeDetails extends Component {
         <Text>{recipe.recipeName}</Text>
         <Text>Ingredients:</Text>
         {
-          recipe.ingredients.map((ingredient, index) => <Text key={index}>{ingredient}</Text>)
+          ingredients.length > 0 ?
+          ingredients.map((ingredient, index) =>
+          <Text key={index}>{ingredient}</Text>
+          ) : <Text> No Ingredients </Text>
         }
         <Text>Instructions:</Text>
         <Text>{recipe.instructions}</Text>
       </View>)
   }
 }
-
