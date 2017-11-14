@@ -19,11 +19,11 @@ export default class RecipeList extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   AsyncStorage.getItem('recipebook')
-  //     .then(recipes => this.setState({ recipes: JSON.parse(recipes) || [] }))
-  //     .catch(error => console.error(error))
-  // }
+  componentDidMount() {
+    AsyncStorage.getItem('recipebook')
+      .then(recipes => this.setState({ recipes: JSON.parse(recipes) || [] }))
+      .catch(error => console.error(error))
+  }
 
   static navigationOptions = {
     title: 'Recipe List'
